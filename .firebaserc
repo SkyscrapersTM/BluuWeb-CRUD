@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bluuwebfirebase": {
+      "hosting": {
+        "BluuWeb-CRUD": [
+          "bluuwebfirebase"
+        ]
+      }
+    }
+  }
+}
