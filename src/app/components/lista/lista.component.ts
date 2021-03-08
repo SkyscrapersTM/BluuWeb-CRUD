@@ -10,14 +10,29 @@ export class ListaComponent implements OnInit {
 
   items:any;
 
+  editarItem:any = {
+    name: ''
+  }
+
   constructor(private conexion: ConexionService) { 
     this.conexion.listaItem().subscribe(item=>{
       this.items= item;
-      console.log(this,this.items);
+      console.log(this.items);
     })
   }
 
   ngOnInit(): void {
   }
 
+  eliminar(item): any{
+    this.conexion.eliminarItem(item);
+  }
+
+  editar(item):any{
+    this.editarItem = item;
+  }
+
+  agregarItemEditado():any{
+    this.conexion.EditarItem(this.editarItem);
+  }
 }
